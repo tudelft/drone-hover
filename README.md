@@ -67,7 +67,7 @@ Example:
 
     from drone_hover.custom_bodies import Custombody
 
-    mounting_points = [np.array(0, 0, 1)] * 4 # Assuming 4 arms
+    mounting_points = [np.array([0, 0, 1])] * 4 # Assuming 4 arms
 
     drone = Custombody(props)   # Automatic computation of inertia properties
 
