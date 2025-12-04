@@ -61,6 +61,17 @@ Example:
 
     drone = Custombody(props, mass, cg, Ix, Iy, Iz, Ixy, Ixz, Iyz)      # User defined inertia properties
 
+Custombody assumes that the root of each arm is at (0, 0, 0). If specific mounting point is required, the mounting point should be defined as a list of array, and added to the Custombody function. It is important to note that every propeller in `props` require its own mounting point. Hence, the length of `props` and `mounting_points` have to be equal.
+
+Example:
+
+    from drone_hover.custom_bodies import Custombody
+
+    mounting_points = [np.array(0, 0, 1)] * 4 # Assuming 4 arms
+
+    drone = Custombody(props)   # Automatic computation of inertia properties
+
+
 ## Propeller Library
 
 The propeller constants are compiled into a library (dictionary) and can be found in the `__init__.py` file.
